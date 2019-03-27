@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-@file: Main.py
+@file: ParaMain.py
 @author: tianfeihan
-@time: 2019-03-22  15:43:45
-@description: 入口函数
+@time: 2019-03-25  20:33:46
+@description: 参数优化的入口函数
 """
 import os
 import numpy
@@ -12,7 +12,7 @@ import xlwt
 from xlutils.copy import copy
 
 from universal import GlobalVariable as gv
-from coreCode import algorithm
+from coreCode import ParaOptimize
 from coreCode import SetDataUnbalanced
 
 
@@ -25,7 +25,7 @@ def func1(filename,att,minority,excel_filename,minority_num,cishu):
         pass
     for i in range(cishu):
         SetDataUnbalanced.SetDataUnbalancedFunc(filename, gv.test_rate,  att,minority,minority_num)
-        algorithm.totalAlgrithon(att)
+        ParaOptimize.totalAlgrithon(att)
         if (i == (cishu-1)):
             gv.flag = False
 
@@ -61,9 +61,9 @@ def write_excel(excel_filename,data):
 
 if __name__ == '__main__':
     att = "a"
-    index=11
+    index=2
     filename = "../Data/rawData/" + gv.project[index] + ".csv"
-    excel_filename = "../Data/excel/" + gv.project[index] + ".xls"
+    excel_filename = "../Data/Paraexcel/" + gv.project[index] + "_para.xls"
     minority_num = gv.MINORITY_num[index]
     print(filename)
     print(excel_filename)
