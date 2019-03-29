@@ -5,6 +5,9 @@
 @time: 2019-03-22  16:10:03
 @description: 
 """
+import warnings
+
+warnings.filterwarnings('ignore')
 
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.naive_bayes import GaussianNB

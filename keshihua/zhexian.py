@@ -45,15 +45,15 @@ def DrwZhexian(project_name,excel_filename):
 
     plt.legend((carV["l0"][0],carV["l1"][0], carV["l2"][0], carV["l3"][0],carV["l4"][0],carV["l5"][0],
                 carV["l6"][0], carV["l7"][0],carV["l8"][0]), label)
-    plt.savefig('../Data/picture/zhexian/'+project_name+'_gyh.png')
+    plt.savefig('../Data/picture/zhexian/'+project_name+'_para.png')
     plt.show()
 if __name__ == '__main__':
-    for i in range(len(gv.project)-1):
-        project_name=gv.project[i]
-        excel_filename="../Data/excel/"+project_name+".xls"
-        DrwZhexian(project_name,excel_filename)
+    # for i in range(len(gv.project)-1):
+    #     project_name=gv.project[i]
+    #     excel_filename="../Data/Paraexcel/"+project_name+".xls"
+    #     DrwZhexian(project_name,excel_filename)
 
-    # project_name = "C4"
-    # excel_filename = "../Data/excel/" + project_name + ".xls"
-    # DrwZhexian(project_name, excel_filename)
+    project_name = "CMC"
+    excel_filename = "../Data/Paraexcel/" + project_name + "_para.xls"
+    DrwZhexian(project_name, excel_filename)
 

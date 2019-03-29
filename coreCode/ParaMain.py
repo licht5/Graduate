@@ -54,14 +54,17 @@ def write_excel(excel_filename,data):
         for index in range(gv.alg_num):
             table = workbook.add_sheet(gv.alg_name[index])
             for e_num in range(gv.evaluation_num):
+
                 table.write(0, e_num, gv.evaluation[e_num])
             for data_index in range(gv.evaluation_num):
+
                 table.write(1,data_index,data_tem[index][data_index])
         workbook.save(excel_filename)
 
 if __name__ == '__main__':
+    # for ing in range(2,len(gv.project)):
     att = "a"
-    index=2
+    index=11
     filename = "../Data/rawData/" + gv.project[index] + ".csv"
     excel_filename = "../Data/Paraexcel/" + gv.project[index] + "_para.xls"
     minority_num = gv.MINORITY_num[index]
@@ -71,6 +74,8 @@ if __name__ == '__main__':
     for j in range(len(gv.MINORITY_RATIO)):
         minority = gv.MINORITY_RATIO[j]
         print(minority)
-        func1(filename, att, minority, excel_filename, minority_num, 2)
+        func1(filename, att, minority, excel_filename, minority_num, 3)
         write_excel(excel_filename, gv.algrithm)
+
+
 

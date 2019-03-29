@@ -23,8 +23,6 @@ def SetDataUnbalancedFunc(filename,test_rate,att_add,minority,minority_num_a):
 
     test_num=int(test_rate*tatol_num)
     test_num=min(test_num,1500)
-
-
     test_num_minority=int(test_num*minority_num/tatol_num)
     test_num_majority=test_num-test_num_minority
 
@@ -33,9 +31,12 @@ def SetDataUnbalancedFunc(filename,test_rate,att_add,minority,minority_num_a):
 
     s1=int(majority_left_num/(1-gv.MINORITY_RATIO[0]))
     s2=int(minority_left_num/gv.MINORITY_RATIO[-1])
+    # s1=int(majority_left_num/0.8)
+    # s2=int(minority_left_num/0.8)
+    # print("s1:"+str(s1)+"s2:"+str(s2)+"minority_left_num:"+str(minority_left_num))
+
 
     train_num=min(s1,s2,3500)
-    print(train_num )
     train_num_minority=int(train_num*minority)
     train_num_majority=train_num-train_num_minority
 
@@ -84,7 +85,7 @@ def SetDataUnbalancedFunc(filename,test_rate,att_add,minority,minority_num_a):
     np.savetxt("../Data/interData/train.csv", train_data, delimiter=',')
     np.savetxt("../Data/interData/test.csv", test_data, delimiter=',')
 
-if __name__ == '__main__':
-    test_rate=0.2
-    filename="../Data/rawData/HT.csv"
-    SetDataUnbalancedFunc(filename,test_rate,"b")
+# if __name__ == '__main__':
+#     test_rate=0.01
+#     filename="../Data/rawData/CMC.csv"
+#     SetDataUnbalancedFunc(filename,test_rate,"a",0.8,333)

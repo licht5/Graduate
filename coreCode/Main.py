@@ -56,14 +56,15 @@ def write_excel(excel_filename,data):
             for e_num in range(gv.evaluation_num):
                 table.write(0, e_num, gv.evaluation[e_num])
             for data_index in range(gv.evaluation_num):
+                print(data_tem[index][data_index])
                 table.write(1,data_index,data_tem[index][data_index])
         workbook.save(excel_filename)
 
 if __name__ == '__main__':
-    att = "a"
-    index=11
+    att = "b"
+    index=0
     filename = "../Data/rawData/" + gv.project[index] + ".csv"
-    excel_filename = "../Data/excel/" + gv.project[index] + ".xls"
+    excel_filename = "../Data/excel/" + gv.project[index] + "_tem.xls"
     minority_num = gv.MINORITY_num[index]
     print(filename)
     print(excel_filename)
